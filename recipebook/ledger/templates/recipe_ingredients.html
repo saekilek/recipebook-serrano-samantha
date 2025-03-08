@@ -2,9 +2,9 @@
 {% load static%}
 {%block title%}Recipe Book{%endblock%}
 {% block content%}
-  <h2>{{name}}</h2>
+  <h2>Recipe {{ recipe.id }}</h2>
   <h3>Ingredients:</h3>
-  {% for ingredients in ingredients %}
-    <li>{{ingredients.name}} | {{ingredients.quantity}}</li>
+  {% for recipe_ingredient in recipe.recipeingredient_set.all %}
+    <li>{{ recipe_ingredient.ingredient.name }} | {{ recipe_ingredient.quantity }}</li>
   {% endfor %}
 {%endblock%}
