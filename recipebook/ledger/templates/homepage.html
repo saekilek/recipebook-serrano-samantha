@@ -1,0 +1,9 @@
+{% extends 'base.html'%}
+{% load static%}
+{%block title%}Recipe Book{%endblock%}
+{% block content%}
+  <h2>
+    Welcome to the Recipe Book! <br>
+    Click <a href="{% url 'ledger:recipe_list' %}">here</a> to see the recipe list!
+  </h2>
+{%endblock%}
