@@ -12,7 +12,6 @@
             {% if user.is_authenticated %}
               <form action="{% url 'logout' %}?next={% url 'login' %}" method="post">
                 {% csrf_token %}
-                {{ form.as_p }}
                 <button class="nav-link" type="submit">Logout</button>
               </form>
             {% else %}

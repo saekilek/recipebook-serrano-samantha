@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Recipe Book{% endblock %}
+{% block content %}
+  <h1>Add a recipe</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ recipe_form.as_p }}
+    <button type="submit" name="make_recipe">Submit</button>
+  </form><br>
+  <h2>Make Ingredient</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ ingredient_form.as_p }}
+    <button type="submit" name="make_ingredient">Submit</button>
+  </form><br>
+  <h2>Add Ingredient to Recipe</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ recipe_ingredient_form.as_p }}
+    <button type="submit" name="make_recipe_ingredient">Submit</button>
+  </form><br>
+  <a href="{% url 'ledger:recipe_list' %}">Go back to recipe list</a>
+{% endblock %}

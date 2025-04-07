@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Recipe Book{% endblock %}
+{% block content %}
+  <h1>{{ recipe.name }}</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Image</button>
+  </form>
+  <a href="{% url 'ledger:recipe_ingredients' recipe.id %}">Cancel</a>
+{% endblock %}
